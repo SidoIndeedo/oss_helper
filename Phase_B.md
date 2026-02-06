@@ -18,7 +18,6 @@
 
 4. AI Assessment Service
 
-- AI service will be used first
 - Analyzes issue descriptions and discussion threads to estimate clarity, difficulty, and likelihood that the issue is approachable for beginners.
 
 5. Data Store
@@ -30,7 +29,7 @@
 1. The system periodically fetches recent GitHub issues from public repositories.
 1. Fetched issue data is stored along with basic metadata such as timestamps, labels, and repository information.
 1. The scoring engine computes heuristic scores for each issue based on predefined signals.
-1. The AI assessment will run first. This service analyzes issue text and comments to produce an approachability confidence score.
+1. The AI assessment service analyzes issue text and comments to produce an approachability confidence score.
 1. Heuristic and AI scores are combined into a final ranking.
 1. A user submits their preferences (tech stack, experience level).
 1. The system returns a ranked list of recommended issues along with explanations for why each issue was suggested.
