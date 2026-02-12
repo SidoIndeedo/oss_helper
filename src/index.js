@@ -1,9 +1,10 @@
 const express = require("express");
+const path = require("path");
 const dotenv = require("dotenv");
-const PORT = 3232;
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
+// const PORT = 3232;
 const APIrouter = require("./API/routes");
 
-dotenv.config({ path: "../.env" });
 const app = express();
 app.use(express.json());
 
@@ -13,6 +14,6 @@ app.get("/health", (req, res) => {
 
 app.get("/api", APIrouter);
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log("we are back");
 });
