@@ -1,17 +1,14 @@
 const { ingestIssuse } = require("./ingestIssues");
 const path = require("path");
 const dotenv = require("dotenv");
+const { connectDB } = require("../config/db");
 
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
 async function run() {
-  const data = await ingestIssuse();
-
-  console.log("Sample issue:");
-  console.log(data.issues[0]);
-
-  console.log("Sample repository:");
-  console.log(data.repositories[0]);
+  await connectDB();
+  await ingestIssuse();
+  process.exit(0);
 }
 
 run();

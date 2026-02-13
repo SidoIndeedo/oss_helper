@@ -1,6 +1,8 @@
 // orchestrates fetching
 const { fetchOpenIssues } = require("./githubClient");
 const { normaliseIssue } = require("./issueNormalizer");
+const issueModel = require("../models/issue");
+const repoModel = require("../models/repository");
 
 async function ingestIssuse() {
   const rawIssues = await fetchOpenIssues();
@@ -10,30 +12,30 @@ async function ingestIssuse() {
 
   //now normalise these issues
   const normalisedIssuesPairedWithRepo = issuesWithNoPr.map(normaliseIssue);
-
-  //seperate issues and their repo so we avoid dublication with same repo and multiple issues in it in db
-  const issues = [];
-  const repoMap = new Map();
+  let count = 0;
 
   for (const pair of normalisedIssuesPairedWithRepo) {
     //push that issue
-    issues.push(pair.issue);
 
-    //if the repo with respective issue is not in the map, then we add it in
-    if (!repoMap.has(pair.repo.repo_id)) {
-      repoMap.set(pair.repo.repo_id, pair.repo);
-    }
+    const { issue, repo } = pair;
+
+    //now we will upsert repo so no same repo with different issue gets new entry in db again
+    await repoModel.updateOne(
+      { repo_id: repo.repo_id },
+      { $set: repo },
+      { upsert: true },
+    );
+
+    //same for issue, we upsert, so no duplicate issue when re running the fetcher
+    await issueModel.updateOne(
+      { issue_id: issue.issue_id },
+      { $set: issue },
+      { upsert: true },
+    );
+
+    count++;
   }
-
-  const repositories = Array.from(repoMap.values());
-
-  console.log(`Final issues count: ${issues.length}`);
-  console.log(`Unique repositories count: ${repositories.length}`);
-
-  return {
-    issues,
-    repositories,
-  };
+  console.log(`Ingestion completed to DB ${count} times`);
 }
 
 module.exports = { ingestIssuse };
