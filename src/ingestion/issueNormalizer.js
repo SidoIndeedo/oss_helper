@@ -10,10 +10,10 @@
 const path = require("path");
 
 function normaliseIssue(githubIssue) {
-  console.log("NORMALIZER CALLED");
+  // console.log("NORMALIZER CALLED");
 
   //using built in url class, will do heavy lifting automatically
-  console.log(githubIssue.html_url);
+  // console.log(githubIssue.html_url);
   const issueUrl = new URL(githubIssue.html_url);
   const pathParts = issueUrl.pathname.split("/").filter(Boolean);
   // pathParts example: ["dotnet(username)", "runtime(repo)", "issues", "122493(issue id)"]
