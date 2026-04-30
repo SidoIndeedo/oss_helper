@@ -10,7 +10,7 @@ const issueSchema = new mongoose.Schema(
     },
     number: Number,
     repo_id: {
-      type: String,
+      type: Number,
       required: true,
       index: true,
     },

@@ -1,0 +1,1 @@
+- A toggle giving options between just fetching issues and fetching issues of big repos

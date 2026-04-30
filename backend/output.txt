@@ -1,0 +1,159 @@
+[dotenv@17.2.4] injecting env (3) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+Monog DB connected
+Fetching Page 1...
+Fetched 10 issues from github
+Repo melonjs/melonJS: existing=false, hasActivityStats=null, needsActivity=true, needsLanguage=true, needsRepoId=true
+Fetching data for melonjs/melonJS...
+Fetching activity for melonjs/melonJS, attempt 1
+Activity response status: 202
+Activity data not ready for melonjs/melonJS
+Fetching activity for melonjs/melonJS, attempt 2
+Activity response status: 202
+Activity data not ready for melonjs/melonJS
+Stats API unavailable for melonjs/melonJS, using defaults
+Using commits sample for melonjs/melonJS
+Fetched data for melonjs/melonJS: activity=true
+  Saved activity_stats for melonjs/melonJS: totalCommits=50
+Repo ekuiter/clausy: existing=false, hasActivityStats=null, needsActivity=true, needsLanguage=true, needsRepoId=true
+Fetching data for ekuiter/clausy...
+Fetching activity for ekuiter/clausy, attempt 1
+Activity response status: 202
+Activity data not ready for ekuiter/clausy
+Fetching activity for ekuiter/clausy, attempt 2
+Activity response status: 202
+Activity data not ready for ekuiter/clausy
+Stats API unavailable for ekuiter/clausy, using defaults
+Using commits sample for ekuiter/clausy
+Fetched data for ekuiter/clausy: activity=true
+  Saved activity_stats for ekuiter/clausy: totalCommits=50
+Repo GiganticMinecraft/seichi-game-data-server: existing=false, hasActivityStats=null, needsActivity=true, needsLanguage=true, needsRepoId=true
+Fetching data for GiganticMinecraft/seichi-game-data-server...
+Fetching activity for GiganticMinecraft/seichi-game-data-server, attempt 1
+Activity response status: 202
+Activity data not ready for GiganticMinecraft/seichi-game-data-server
+Fetching activity for GiganticMinecraft/seichi-game-data-server, attempt 2
+Activity response status: 202
+Activity data not ready for GiganticMinecraft/seichi-game-data-server
+Stats API unavailable for GiganticMinecraft/seichi-game-data-server, using defaults
+Using commits sample for GiganticMinecraft/seichi-game-data-server
+Fetched data for GiganticMinecraft/seichi-game-data-server: activity=true
+  Saved activity_stats for GiganticMinecraft/seichi-game-data-server: totalCommits=50
+Repo mmberry96/home-ops: existing=false, hasActivityStats=null, needsActivity=true, needsLanguage=true, needsRepoId=true
+Fetching data for mmberry96/home-ops...
+Fetching activity for mmberry96/home-ops, attempt 1
+Activity response status: 202
+Activity data not ready for mmberry96/home-ops
+Fetching activity for mmberry96/home-ops, attempt 2
+Activity response status: 202
+Activity data not ready for mmberry96/home-ops
+Stats API unavailable for mmberry96/home-ops, using defaults
+Using commits sample for mmberry96/home-ops
+Fetched data for mmberry96/home-ops: activity=true
+  Saved activity_stats for mmberry96/home-ops: totalCommits=50
+Repo gardener/gardener-landscape-kit: existing=false, hasActivityStats=null, needsActivity=true, needsLanguage=true, needsRepoId=true
+Fetching data for gardener/gardener-landscape-kit...
+Fetching activity for gardener/gardener-landscape-kit, attempt 1
+Activity response status: 202
+Activity data not ready for gardener/gardener-landscape-kit
+Fetching activity for gardener/gardener-landscape-kit, attempt 2
+Activity response status: 202
+Activity data not ready for gardener/gardener-landscape-kit
+Stats API unavailable for gardener/gardener-landscape-kit, using defaults
+Using commits sample for gardener/gardener-landscape-kit
+Fetched data for gardener/gardener-landscape-kit: activity=true
+  Saved activity_stats for gardener/gardener-landscape-kit: totalCommits=50
+Repo appwrite/appwrite: existing=false, hasActivityStats=null, needsActivity=true, needsLanguage=true, needsRepoId=true
+Fetching data for appwrite/appwrite...
+Fetching activity for appwrite/appwrite, attempt 1
+Activity response status: 200
+Activity data received for appwrite/appwrite: 52 weeks
+Stats API success: commits=7980, activeWeeks=52, consistency=1.00, staleness=0
+Fetched data for appwrite/appwrite: activity=true
+  Saved activity_stats for appwrite/appwrite: totalCommits=7980
+Repo WillBooster/minimal-promise-pool: existing=false, hasActivityStats=null, needsActivity=true, needsLanguage=true, needsRepoId=true
+Fetching data for WillBooster/minimal-promise-pool...
+Fetching activity for WillBooster/minimal-promise-pool, attempt 1
+Activity response status: 202
+Activity data not ready for WillBooster/minimal-promise-pool
+Fetching activity for WillBooster/minimal-promise-pool, attempt 2
+Activity response status: 202
+Activity data not ready for WillBooster/minimal-promise-pool
+Stats API unavailable for WillBooster/minimal-promise-pool, using defaults
+Using commits sample for WillBooster/minimal-promise-pool
+Fetched data for WillBooster/minimal-promise-pool: activity=true
+  Saved activity_stats for WillBooster/minimal-promise-pool: totalCommits=50
+Repo callstack/react-native-pager-view: existing=false, hasActivityStats=null, needsActivity=true, needsLanguage=true, needsRepoId=true
+Fetching data for callstack/react-native-pager-view...
+Fetching activity for callstack/react-native-pager-view, attempt 1
+Activity response status: 202
+Activity data not ready for callstack/react-native-pager-view
+Fetching activity for callstack/react-native-pager-view, attempt 2
+Activity response status: 202
+Activity data not ready for callstack/react-native-pager-view
+Stats API unavailable for callstack/react-native-pager-view, using defaults
+Using commits sample for callstack/react-native-pager-view
+Fetched data for callstack/react-native-pager-view: activity=true
+  Saved activity_stats for callstack/react-native-pager-view: totalCommits=50
+Repo drewkerrigan/nagios-http-json: existing=false, hasActivityStats=null, needsActivity=true, needsLanguage=true, needsRepoId=true
+Fetching data for drewkerrigan/nagios-http-json...
+Fetching activity for drewkerrigan/nagios-http-json, attempt 1
+Activity response status: 202
+Activity data not ready for drewkerrigan/nagios-http-json
+Fetching activity for drewkerrigan/nagios-http-json, attempt 2
+Activity response status: 202
+Activity data not ready for drewkerrigan/nagios-http-json
+Stats API unavailable for drewkerrigan/nagios-http-json, using defaults
+Using commits sample for drewkerrigan/nagios-http-json
+Fetched data for drewkerrigan/nagios-http-json: activity=true
+  Saved activity_stats for drewkerrigan/nagios-http-json: totalCommits=50
+Repo DogStark/PetChain-MobileApp: existing=false, hasActivityStats=null, needsActivity=true, needsLanguage=true, needsRepoId=true
+Fetching data for DogStark/PetChain-MobileApp...
+Fetching activity for DogStark/PetChain-MobileApp, attempt 1
+Activity response status: 202
+Activity data not ready for DogStark/PetChain-MobileApp
+Fetching activity for DogStark/PetChain-MobileApp, attempt 2
+Activity response status: 202
+Activity data not ready for DogStark/PetChain-MobileApp
+Stats API unavailable for DogStark/PetChain-MobileApp, using defaults
+Using commits sample for DogStark/PetChain-MobileApp
+Fetched data for DogStark/PetChain-MobileApp: activity=true
+  Saved activity_stats for DogStark/PetChain-MobileApp: totalCommits=50
+Ingestion completed to DB 10 times
+Starting signal computation...
+Found 20 issues and 20 repos
+Processing issue 3439490396: freshness=0.9998961968878601, crowd=1, repoActivity=0.63, labelIntent=0.6
+Processing issue 3870513869: freshness=0.9998960634002058, crowd=1, repoActivity=0.63, labelIntent=0.6
+Processing issue 4309663282: freshness=0.9998960583847737, crowd=0.383224293337255, repoActivity=0.63, labelIntent=0.6
+Processing issue 3480151837: freshness=0.9998960534979424, crowd=1, repoActivity=0.63, labelIntent=0.6
+Processing issue 4091237505: freshness=0.9998959201388888, crowd=0.22721089587269092, repoActivity=0.63, labelIntent=0.6
+Processing issue 3939649210: freshness=0.9998959153806585, crowd=0.312771272649591, repoActivity=0.63, labelIntent=0.6
+Processing issue 4105594083: freshness=0.9998959107510288, crowd=0.383224293337255, repoActivity=0.63, labelIntent=0.6
+Processing issue 4321784813: freshness=0.9998955201903292, crowd=0.26968351175578803, repoActivity=0.65, labelIntent=0.4
+Processing issue 3888361043: freshness=0.999895515303498, crowd=0.25026701779259936, repoActivity=0.63, labelIntent=0.6
+Processing issue 4331878791: freshness=0.9998955104166667, crowd=0.23934588700996243, repoActivity=1, labelIntent=0.4
+Processing issue 4306423422: freshness=0.9999963284465021, crowd=1, repoActivity=0.63, labelIntent=0.6
+Processing issue 2268524753: freshness=0.9999963231738683, crowd=1, repoActivity=0.63, labelIntent=0.6
+Processing issue 1222010126: freshness=0.9999963184156379, crowd=1, repoActivity=0.63, labelIntent=0.6
+Processing issue 3803501751: freshness=0.9999961846707819, crowd=1, repoActivity=0.63, labelIntent=0.6
+Processing issue 3694381482: freshness=0.9999960507973251, crowd=1, repoActivity=0.63, labelIntent=0.6
+Processing issue 2255752101: freshness=0.999996045781893, crowd=0.20119542622303027, repoActivity=0.87, labelIntent=1
+Processing issue 1021623956: freshness=0.9999959122942387, crowd=1, repoActivity=0.63, labelIntent=0.6
+Processing issue 1180191573: freshness=0.9999959074074074, crowd=0.4765053580405044, repoActivity=0.63, labelIntent=0.6
+Processing issue 4093721899: freshness=0.9999957739197531, crowd=0.3581970477838151, repoActivity=0.63, labelIntent=0.6
+Processing issue 4303454187: freshness=0.9999957690329218, crowd=0.383224293337255, repoActivity=0.63, labelIntent=0.6
+signals computed and stored: 20 signals
+[
+  {
+    "url": "https://www.github.com/melonjs/melonJS/issues/1413",
+    "title": "Stencil masking does not work in WebGL1 mode",
+    "repo": "melonjs/melonJS",
+    "score": 0.6337,
+    "explanation": {
+      "freshness": 0.9999963284465021,
+      "crowd": 1,
+      "repoActivity": 0.63,
+      "labelIntent": 0.6,
+      "stackMatch": 0.1259
+    }
+  }
+]

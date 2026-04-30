@@ -1,0 +1,148 @@
+{
+  "info": {
+    "name": "OSS Helper Rank API Tests",
+    "_postman_id": "3d1a76f8-7b45-4d7a-9a6c-8f7ecd5e8b26",
+    "description": "Postman collection for testing the /api/rank endpoint.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3232/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3232",
+          "path": ["health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rank issues with profile array",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"profile\": [\n    { \"name\": \"javascript\", \"level\": \"beginner\" },\n    { \"name\": \"docker\", \"level\": \"intermediate\" }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3232/api/rank",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3232",
+          "path": ["api", "rank"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status is 200', function () {", 
+              "    pm.response.to.have.status(200);", 
+              "});", 
+              "pm.test('Response is an array', function () {", 
+              "    var jsonData = pm.response.json();", 
+              "    pm.expect(jsonData).to.be.an('array');", 
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "Rank issues with single language and level",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"language\": \"python\",\n  \"level\": \"advanced\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3232/api/rank",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3232",
+          "path": ["api", "rank"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status is 200', function () {", 
+              "    pm.response.to.have.status(200);", 
+              "});", 
+              "pm.test('Response is an array', function () {", 
+              "    var jsonData = pm.response.json();", 
+              "    pm.expect(jsonData).to.be.an('array');", 
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "Rank issues with invalid request body",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"foo\": \"bar\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3232/api/rank",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3232",
+          "path": ["api", "rank"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status is 400', function () {", 
+              "    pm.response.to.have.status(400);", 
+              "});", 
+              "pm.test('Error message is returned', function () {", 
+              "    var jsonData = pm.response.json();", 
+              "    pm.expect(jsonData).to.have.property('error');", 
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "response": []
+    }
+  ]
+}

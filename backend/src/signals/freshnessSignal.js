@@ -5,7 +5,7 @@ function computeAndReturnFreshnessScore(issue) {
   const repoUpdatedAt = new Date(issue.updated_at);
 
   const diffDays = (dateNow - repoUpdatedAt) / (1000 * 60 * 60 * 24);
-  return Math.max(0, 1 - diffDays / 45);
+  return Math.max(0, 1 - diffDays / 90);
 }
 
 module.exports = { computeAndReturnFreshnessScore };

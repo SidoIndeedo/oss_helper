@@ -20,7 +20,7 @@ function normaliseIssue(githubIssue) {
 
   const owner = pathParts[0];
   const repoName = pathParts[1];
-  const repoId = `${owner}/${repoName}`;
+  const repoId = githubIssue.repository ? githubIssue.repository.id : null;
 
   const issue = {
     issue_id: githubIssue.id,
@@ -31,7 +31,7 @@ function normaliseIssue(githubIssue) {
     comment_count: githubIssue.comments,
     created_at: githubIssue.created_at,
     updated_at: githubIssue.updated_at,
-    repo_id: repoId,
+    repo_id: repoId, // This must be a Number now
   };
 
   const repo = {

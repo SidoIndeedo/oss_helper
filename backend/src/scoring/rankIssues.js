@@ -10,9 +10,19 @@ const PROFICIENCY_LEVELS = {
 };
 
 async function rankIssue(userPreference) {
-  const issues = await issueModel.find();
-  const repos = await repoModel.find();
-  const signals = await signalModel.find();
+  console.log("📥 Received user preference:", userPreference);
+  let issues;
+  let repos;
+  let signals;
+  try{
+  issues = await issueModel.find();
+  repos = await repoModel.find();
+  signals = await signalModel.find();
+  } catch (err) {
+    console.error("Error fetching data from DB:", err);
+    throw new Error("Database error");
+  }
+
 
   //making map for fast lookup rather than using db calls
   const signalMap = new Map();
@@ -37,22 +47,36 @@ async function rankIssue(userPreference) {
 
     if (!signal || !repo) continue;
 
-    if (userPreference.length > 0 && repo.primary_language) {
-      repo.primary_language.forEach((repoLangObj) => {
-        const userSkill = userPreference.find(
-          (u) => u.name.toLowerCase() === repoLangObj.name.toLowerCase(),
-        );
+    const normalizedPrefs = Array.isArray(userPreference)
+      ? userPreference.map((pref) => ({
+          name: String(pref.name || "").trim().toLowerCase(),
+          level: String(pref.level || "").trim().toUpperCase(),
+        }))
+      : [];
+
+    const repoLanguages = [];
+    if (Array.isArray(repo.primary_language)) {
+      repoLanguages.push(...repo.primary_language);
+    } else if (repo.primary_language && typeof repo.primary_language === "object" && repo.primary_language.name) {
+      repoLanguages.push(repo.primary_language);
+    } else if (typeof repo.primary_language === "string") {
+      repoLanguages.push({ name: repo.primary_language, percent: 100 });
+    }
+
+    if (normalizedPrefs.length > 0) {
+      repoLanguages.forEach((repoLangObj) => {
+        const repoName = String(repoLangObj.name || "").trim().toLowerCase();
+        const userSkill = normalizedPrefs.find((u) => u.name === repoName);
 
         if (userSkill) {
-          const multiplier =
-            PROFICIENCY_LEVELS[userSkill.level.toUpperCase()] || 0.1;
-          // If you know JS (50%) and Docker (30%), stackMatch becomes 0.8
-          stackMatch += (repoLangObj.percent / 100) * multiplier;
+          const multiplier = PROFICIENCY_LEVELS[userSkill.level] ?? 0.1;
+          const percent = Number(repoLangObj.percent) || 100;
+          stackMatch += (percent / 100) * multiplier;
         }
       });
     }
 
-    //if stack barely matches, skip the issue
+    // if stack barely matches, skip the issue
     if (stackMatch < 0.01) continue;
 
     const freshness = signal.freshness_score || 0;

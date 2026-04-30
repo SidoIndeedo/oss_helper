@@ -1,6 +1,7 @@
 const express = require("express");
 const APIrouter = express.Router();
+const { UserPreference } = require("./user.controller");
 
-APIrouter.get("/userPreference", (req, res) => {});
+APIrouter.post("/rank", UserPreference);
 
 module.exports = APIrouter;

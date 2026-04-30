@@ -4,7 +4,8 @@ const dotenv = require("dotenv");
 const { connectDB } = require("../config/db");
 const { computeSignalForAllIssues } = require("../signals/computeSignal");
 const { rankIssue } = require("../scoring/rankIssues");
-const totalPagesToFetch = 3;
+const totalPagesToFetch = 1;
+const date = new Date()
 
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
@@ -23,10 +24,10 @@ async function run() {
 
   await computeSignalForAllIssues();
   // const skills = ["JavaScript", "C++", "Java"];
-  // const myProfile = [
-  //   { name: "javascript", level: "beginner" },
-  //   { name: "docker", level: "intermediate" },
-  // ];
+  const myProfile = [
+    { name: "javascript", level: "beginner" },
+    { name: "docker", level: "intermediate" },
+  ];
   // const rank = await rankIssue(myProfile);
   // console.table(rank.slice(0, 5));
   // console.log(JSON.stringify(rank, null, 2));
@@ -34,3 +35,4 @@ async function run() {
 }
 
 run();
+
